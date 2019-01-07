@@ -8,6 +8,17 @@ const PageLink = (props) => {
             <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
                 <a>{props.name}</a>
             </Link>
+            <style jsx>
+            {`
+            li {
+                list-style: none;
+                margin: 5px 0;
+            }
+            a {
+                text-decoration: none;
+            }
+            `}
+            </style>
         </li>
     )
 }
@@ -20,6 +31,15 @@ const Index = (props) => (
                     <PageLink id={show.id} name={show.name} key={show.id}/>
                 ))}
             </ul>
+            <style jsx>{`
+            h1, a {
+                font-family: "Arial";
+            }
+
+            ul {
+                padding: 0;
+            }
+            `}</style>
         </Layout>
     </div>
 )
